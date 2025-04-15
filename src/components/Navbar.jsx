@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 
+
 export const Navbar = () => {
 
 	return (
@@ -10,7 +11,17 @@ export const Navbar = () => {
 				</Link>
 				<div className="ml-auto">
 					<Link to="/demo">
-						<button className="btn btn-primary">Check the Context in action</button>
+						{/* <button className="btn btn-primary btn-lg dropdown-toggle dropdown-menu-end" type="button" data-bs-toggle="dropdown" aria-expanda="false">
+							Favorites
+						</button>
+						<ul className="dropdown-menu">
+							{store.favorites.length > 0 ? store.favorites.map((favorite, index) => {
+							<li>
+								{favorite}
+							</li>
+							})
+							:<li>add a favorite</li>}
+						</ul> */}
 					</Link>
 				</div>
 			</div>
