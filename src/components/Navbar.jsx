@@ -1,7 +1,11 @@
 import { Link } from "react-router-dom";
+import useGlobalReducer from "../hooks/useGlobalReducer.jsx";
+import storeReducer from "../store.js";
 
 
 export const Navbar = () => {
+
+	const { store, dispatch } = useGlobalReducer()
 
 	return (
 		<nav className="navbar navbar-light bg-light">
@@ -10,21 +14,25 @@ export const Navbar = () => {
 					<span className="navbar-brand mb-0 h1">React Boilerplate</span>
 				</Link>
 				<div className="ml-auto">
-					<Link to="/demo">
-						{/* <button className="btn btn-primary btn-lg dropdown-toggle dropdown-menu-end" type="button" data-bs-toggle="dropdown" aria-expanda="false">
-							Favorites
-						</button>
-						<ul className="dropdown-menu">
-							{store.favorites.length > 0 ? store.favorites.map((favorite, index) => {
-							<li>
-								{favorite}
-							</li>
-							})
-							:<li>add a favorite</li>}
-						</ul> */}
+					<Link to="/">
+						<div class="dropdown">
+							<button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+								FAVORITES
+							</button>
+							<ul class="dropdown-menu">
+								{store.favorites.length > 0 ? store.favorites.map((favorite, index) => (
+									<li className="text-primary">{favorite}</li>
+								))
+									: <li>
+										Add a favorite
+									</li>}
+							</ul>
+						</div>
 					</Link>
 				</div>
 			</div>
 		</nav>
 	);
 };
+
+

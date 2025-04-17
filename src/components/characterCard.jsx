@@ -6,14 +6,14 @@ export const CharacterCard = (props) => {
   const { store, dispatch } = useGlobalReducer()
 
   const handleFavs = () => {
-    dispatch({type:toggle_favorites, payload: props.name})
+    dispatch({type:"toggle_favorites", payload: props.name})
   }
   return (
     <div className="card mx-2" style={{"minWidth": "18rem"}}>
       <img src="..." className="card-img-top" alt="..." />
         <div className="card-body">
           <h5 className="card-title">{props.name}</h5>
-          <span onClick={()=> handleFavs()}>❤️</span>
+          <span className="toggle mt-2 m-2" onClick={() => handleFavs()}><i className="fa-solid fa-heart" fa-2xl style={{ color: "#ef0658" }}></i></span>
           <Link to={`/characters/${props.uid}`} className="btn btn-primary">Learn More</Link>
       </div>
     </div>
