@@ -1,7 +1,7 @@
 import useGlobalReducer from "../hooks/useGlobalReducer.jsx";
 import { Link } from "react-router-dom";
 
-export const CharacterCard = (props) => {
+export const StarshipCard = (props) => {
 
   const { store, dispatch } = useGlobalReducer()
 
@@ -14,7 +14,7 @@ export const CharacterCard = (props) => {
         <div className="card-body">
           <h5 className="card-title">{props.name}</h5>
           <span className="toggle mt-2 m-2" onClick={() => handleFavs()}><i className="fa-solid fa-heart" style={{ color: "#ef0658" }}></i></span>
-          <Link to={`/characters/${props.uid}`} className="btn btn-primary">Learn More</Link>
+          <Link to={`/starships/${props.uid}`} className="btn btn-primary">Learn More</Link>
       </div>
     </div>
   );

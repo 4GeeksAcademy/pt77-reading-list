@@ -1,8 +1,9 @@
 // Import necessary hooks and functions from React.
 import { useContext, useReducer, createContext } from "react";
 import storeReducer, { initialStore } from "../store"  // Import the reducer and the initial state.
-import { getCharacters } from "./actions";
-
+import { getCharacters} from "./actions";
+import { getPlanets } from "./actions";
+import { getStarships } from "./actions";
 // Create a context to hold the global state of the application
 // We will call this global state the "store" to avoid confusion while using local states
 const StoreContext = createContext()
@@ -14,8 +15,11 @@ export function StoreProvider({ children }) {
     const [store, dispatch] = useReducer(storeReducer, initialStore())
     // Provide the store and dispatch method to all child components.
     const actions ={
-        getCharacters: (payload) => getCharacters(dispatch, payload)
+        getCharacters: (payload) => getCharacters(dispatch, payload),
+        getPlanets: (payload) => getPlanets(dispatch, payload),
+        getStarships: (payload) => getStarships(dispatch, payload)
     }
+    
     return <StoreContext.Provider value={{ store, dispatch, ...actions }}>
         {children}
     </StoreContext.Provider>
@@ -23,6 +27,6 @@ export function StoreProvider({ children }) {
 
 // Custom hook to access the global state and dispatch function.
 export default function useGlobalReducer() {
-    const { dispatch, store, getCharacters } = useContext(StoreContext)
-    return { dispatch, store, getCharacters};
+    const { dispatch, store, getCharacters, getPlanets, getStarships } = useContext(StoreContext)
+    return { dispatch, store, getCharacters, getPlanets, getStarships};
 }
