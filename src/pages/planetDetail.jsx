@@ -7,7 +7,7 @@ export const PlanetDetails = () => {
   const [planet, setPlanet] = useState({})
   const { store, dispatch } = useGlobalReducer()
 
-  useEffect(()=>{
+  useEffect(() => {
     getEachPlanet()
   }, [])
 
@@ -19,14 +19,16 @@ export const PlanetDetails = () => {
 
   return (
     <div className="text-center mt-5">
-      <h1>Name:</h1>
-      <h3>{planet.name}</h3>
+      <div className="charactercard">
+        <h1>Name:</h1>
+        <h3>{planet.name}</h3>
 
-      <h1>Climate:</h1>
-      <h3>{planet.climate}</h3>
+        <h1>Climate:</h1>
+        <h3>{planet.climate}</h3>
 
-      <h1>Terrain:</h1>
-      <h3>{planet.terrain}</h3>
+        <h1>Terrain:</h1>
+        <h3>{planet.terrain}</h3>
+      </div>
     </div>
   );
 }; 

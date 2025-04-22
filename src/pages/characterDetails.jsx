@@ -7,7 +7,7 @@ export const CharacterDetails = () => {
   const [character, setCharacter] = useState({})
   const { store, dispatch } = useGlobalReducer()
 
-  useEffect(()=>{
+  useEffect(() => {
     getEachCharacter()
   }, [])
 
@@ -16,17 +16,20 @@ export const CharacterDetails = () => {
     let data = await response.json();
     setCharacter(data.result.properties);
   }
-  console.log(character)
   return (
+
     <div className="text-center mt-5">
-      <h1>Name:</h1>
-      <h3>{character.name}</h3>
+      <div className="charactercard">
+        <h1>Name:</h1>
+        <h3>{character.name}</h3>
 
-      <h1>Eye color</h1>
-      <h3>{character.eye_color}</h3>
+        <h1>Eye color:</h1>
+        <h3>{character.eye_color}</h3>
 
-      <h1>Birth Year</h1>
-      <h3>{character.birth_year}</h3>
+        <h1>Birth Year:</h1>
+        <h3>{character.birth_year}</h3>
+      </div>
     </div>
+
   );
 }; 

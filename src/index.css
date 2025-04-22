@@ -1,3 +1,24 @@
-i.fa-solid.fa-heart {
-    font-size: 20px;
+i.btn.btn-outline-danger.fa-regular.fa-heart {
+    font-size: 24.8px;
+}
+div.charactercard {
+    border-style: solid;
+    border-radius: 10px;
+    width: 30%;
+    margin: auto;
+    background: white;
+}
+body {
+    background-image: url(https://img.freepik.com/premium-vector/space-background-with-stars-vector-illustration_97886-319.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+div.Footer {  
+    bottom: 100;
+    width: 100%;
+    height: 2 rem;
+    color: white;
+}
+h2 {
+    color: white;
 }

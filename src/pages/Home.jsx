@@ -14,7 +14,7 @@ export const Home = () => {
 		getCharacters()
 
 	}, [])
-
+	
 	useEffect(() => {
 		getPlanets()
 
@@ -66,6 +66,3 @@ export const Home = () => {
 }; 
 
 
-// add card for details
-// remove button
-// add background imgs n icons
